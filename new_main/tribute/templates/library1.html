@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url 'library1' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" style="width: 200px;">
+        <br>
+        <label for="exampleInputEmail1" class="form-label">Date</label>
+        <input type="date" class="form-control" name="date" class="date" style="width: 200px;">
+    </div>
+    <br>
+    <div>
+        <table style="border: 1px solid black;text-align: center;background-color: bisque;">
+            <thead>
+                <th rowspan="2">Sr No</th>
+                <th rowspan="2">Book</th>
+                <th rowspan="2">Quantity</th>
+                <th rowspan="2">Buyer</th>
+                <th rowspan="2">Date Of taking</th>
+                <th rowspan="2">Date Of Return</th>
+            </thead>
+            <tbody id="invoicetable" style="border: 1px solid black;padding: 10px;">
+                <tr>
+                    <th scope="row" >1</th>
+                    <td><input type="text" id="book" name="book" style="width: 100px;"><label for="number"></label></td>
+                    <td><input type="text" id="quantity" name="quantity" style="width: 100px;"><label for="number"></label></td>
+                    <td><input type="text" id="buyer" name="buyer" style="width: 100px;"><label for="number"></label></td>
+                    <td><input type="date" id="dt" name="dt" style="width: 100px;"><label for="number"></label></td>
+                    <td><input type="date" id="dr" name="dr" style="width: 100px;"><label for="number"></label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <input type="text" hidden name="count" id="count" value="1">
+    <button type="button" class="btn btn-primary" onclick="addrow()">Click Here</button> -->
+    <br><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-secondary">Cancel</button>
+</form>
+<script>
+
+</script>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fname" name="fname" style="width: 200px;">
+
+        <label for="exampleInputEmail1" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lname" name="lname" style="width: 200px;"><br>
+
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email">
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+
+</form>
+
+
+
+
+{% if message %}
+<div class="alert alert-success" role="alert">
+    {{"message"}}
+</div>
+{% endif %}
+
+{% endblock content %}
